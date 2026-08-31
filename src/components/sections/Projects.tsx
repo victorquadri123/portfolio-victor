@@ -7,6 +7,16 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
+type Project = {
+  id: string;
+  image: string;
+  title: string;
+  link: string;
+  category: string;
+  description: string;
+  contribution?: string;
+  technologies: string[];
+};
 export function Projects() {
   return (
     <section id="projects" className="py-32 relative bg-background">
@@ -30,14 +40,14 @@ export function Projects() {
   );
 }
 
-function ProjectCard({ project, index }: { project: any, index: number }) {
+function ProjectCard({ project, index }: { project: Project, index: number }) {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "end start"]
   });
 
-  // Parallax effect for the image
+  /* Parallax effect for the image */
   const y = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
 
   return (
@@ -74,7 +84,7 @@ function ProjectCard({ project, index }: { project: any, index: number }) {
       <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
         <div className="md:col-span-8 flex flex-col gap-4">
           <div className="text-primary font-mono text-xs tracking-widest uppercase">
-            {String(index + 1).padStart(2, '0')} // {project.category}
+            {String(index + 1).padStart(2, '0')} {"//"} {project.category}
           </div>
           <h3 className="text-3xl md:text-5xl font-bold tracking-tight">
             {project.title}
