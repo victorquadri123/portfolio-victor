@@ -17,33 +17,17 @@ const navLinks = [
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { scrollY } = useScroll();
-  const [hidden, setHidden] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
   useMotionValueEvent(scrollY, "change", (latest) => {
-    const previous = scrollY.getPrevious() ?? 0;
-    
     // Check if scrolled past top
     if (latest > 50) setIsScrolled(true);
     else setIsScrolled(false);
-
-    // Hide navbar on scroll down, show on scroll up
-    if (latest > 150 && latest > previous) {
-      setHidden(true);
-    } else {
-      setHidden(false);
-    }
   });
 
   return (
     <>
-      <motion.header
-        variants={{
-          visible: { y: 0, opacity: 1 },
-          hidden: { y: "-100%", opacity: 0 }
-        }}
-        animate={hidden ? "hidden" : "visible"}
-        transition={{ duration: 0.35, ease: "easeInOut" }}
+      <header
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
           isScrolled ? "py-4" : "py-8"
@@ -81,7 +65,7 @@ export function Navbar() {
             <Menu className="w-5 h-5" />
           </button>
         </div>
-      </motion.header>
+      </header>
 
       {/* Mobile Nav Overlay */}
       <AnimatePresence>

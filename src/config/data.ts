@@ -15,7 +15,7 @@ export const PERSONAL_INFO = {
 };
 
 export const SOCIAL_LINKS = {
-  linkedin: "LINKEDIN_URL",
+  linkedin: "https://www.linkedin.com/in/victor-quadri-71a0b12b2?trk=contact-info",
   github: "GITHUB_URL",
   portfolio: "PORTFOLIO_URL",
 };
@@ -48,8 +48,7 @@ export const PROJECTS = [
       "An e-commerce web application developed collaboratively during my Aptech training.",
     contribution: "Frontend development. Backend developed by another team member.",
     technologies: ["HTML", "CSS", "Bootstrap", "JavaScript", "Python", "Django", "SQL"],
-    link: "PROJECT_LINK_01",
-    image: "/images/pythegrax_visual.jpg",
+    link: "https://Pythagorax-web.onrender.com",
   },
   {
     id: "atm-facial-recognition",
@@ -66,8 +65,7 @@ export const PROJECTS = [
       "Security-focused system design",
     ],
     technologies: ["Python", "Django", "OpenCV", "HTML", "CSS", "JavaScript", "Bootstrap"],
-    link: "PROJECT_LINK_02",
-    image: "/images/atm_facial_visual.jpg",
+    link: "https://atm-biometric-auth.onrender.com",
   },
 ];
 
@@ -84,5 +82,5 @@ export const EXPERIENCE = [
 
 export const CERTIFICATIONS = [
   "Google HTML & CSS Certification",
-  "Cloud Computing Certification",
+  "Workplace IT administration and branding",
 ];
